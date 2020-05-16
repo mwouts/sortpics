@@ -5,6 +5,7 @@
 *.egg-info
 build
 dist
+__pycache__
 
 # Tests that involve local examples
 test_local*
