@@ -1,0 +1,18 @@
+name: sortpics
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python
+  - pillow
+  - tqdm
+  - pytest
+  - pytest-xdist
+  - pre-commit
+  - black
+  - flake8
+  - codecov
+  - pylint
+  - pip
+  - pip:
+    - -r file:requirements.txt
