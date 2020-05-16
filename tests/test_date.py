@@ -1,5 +1,11 @@
 from datetime import datetime
-from sortpics.timestamp import creation_date_from_path
+from sortpics.timestamp import creation_date_from_path, fromisoformat
+
+
+def test_fromisoformat():
+    assert fromisoformat("2017-11-15T14:25:59.000567") == datetime(
+        2017, 11, 15, 14, 25, 59, 567
+    )
 
 
 def test_creation_date_from_path():

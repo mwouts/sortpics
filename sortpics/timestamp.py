@@ -7,6 +7,18 @@ from PIL import Image
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
 
+try:
+    fromisoformat = datetime.fromisoformat
+except AttributeError:
+
+    def fromisoformat(string):
+        """An alternative to datetime.fromisoformat in Python < 3.7"""
+        string = string.replace("T", " ")
+        if "." in string:
+            return datetime.strptime(string, "%Y-%m-%d %H:%M:%S.%f")
+        return datetime.strptime(string, "%Y-%m-%d %H:%M:%S")
+
+
 DATE = re.compile(r"(.*)([0-9]{4})[-/]?([0-9]{2})[-/]?([0-9]{2})(.*)")
 DATETIME = re.compile(
     r"(.*)([0-9]{4})-?([0-9]{2})-?([0-9]{2})[ _]?-?([0-9]{2})[\.-]?([0-9]{2})[\.-]?([0-9]{2})(.*)"
@@ -90,7 +102,7 @@ def creation_date_from_exif(filename):
 
         date, time = dat.split(" ")
         date = date.replace(":", "-")
-        return datetime.fromisoformat(f"{date}T{time}.{sub}")
+        return fromisoformat(f"{date}T{time}.{sub}")
 
     raise ValueError(f"No date found in the exif data for {filename}")
 
