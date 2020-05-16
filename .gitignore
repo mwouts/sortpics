@@ -3,6 +3,8 @@
 
 # Python
 *.egg-info
+build
+dist
 
 # Tests that involve local examples
 test_local*

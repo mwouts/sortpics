@@ -14,5 +14,6 @@ dependencies:
   - codecov
   - pylint
   - pip
+  - twine
   - pip:
     - -r file:requirements.txt
