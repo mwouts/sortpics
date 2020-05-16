@@ -26,7 +26,7 @@ jobs:
           # all Python files should follow PEP8 (except some notebooks, see setup.cfg)
           flake8 sortpics tests
           # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
-          flake8 . --count --exit-zero --max-complexity=10 --statistics
+          flake8 . --count --exit-zero --max-complexity=12 --statistics
       - name: Install from source (required for the pre-commit tests)
         run: pip install .
       - name: Test with pytest

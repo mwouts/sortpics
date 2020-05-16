@@ -139,5 +139,5 @@ def sortpics(folder=".", test=True, scripts=True, subfolder="%Y-%m"):
         print("# Rerun with --no-test to rename the files")
 
     print(
-        f"# When you're done, clean up empty directories with 'find . -type d -empty -delete'"
+        "# When you're done, clean up empty directories with 'find . -type d -empty -delete'"
     )
