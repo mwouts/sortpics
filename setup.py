@@ -24,10 +24,10 @@ setup(
     packages=find_packages(exclude=["tests"]),
     entry_points={"console_scripts": ["sortpics = sortpics.cli:sortpics_cli"]},
     tests_require=["pytest"],
-    install_requires=["pillow", "hachoir"],
+    install_requires=["pillow", "hachoir", "tqdm"],
     license="MIT",
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
         "Environment :: Console",
         "Intended Audience :: Developers",
