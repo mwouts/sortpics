@@ -31,3 +31,5 @@ jobs:
         run: coverage run --source=. -m py.test
       - name: Upload coverage
         run: coverage report -m
+        env:
+          CODECOV_TOKEN: "0c4ece2e-036c-4919-9d41-bac79ebfec22"
