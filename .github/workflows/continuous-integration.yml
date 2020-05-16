@@ -27,8 +27,6 @@ jobs:
           flake8 sortpics tests
           # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=12 --statistics
-      - name: Install from source (required for the pre-commit tests)
-        run: pip install .
       - name: Test with pytest
         run: coverage run --source=. -m py.test
       - name: Upload coverage
