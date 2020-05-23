@@ -28,8 +28,6 @@ jobs:
           # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=12 --statistics
       - name: Test with pytest
-        run: coverage run --source=. -m py.test
+        run: pytest --cov=./ --cov-report=xml
       - name: Upload coverage
-        run: coverage report -m
-        env:
-          CODECOV_TOKEN: "0c4ece2e-036c-4919-9d41-bac79ebfec22"
+        uses: codecov/codecov-action@v1
