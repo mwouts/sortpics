@@ -10,6 +10,11 @@ from .normalize import normalize_filenames
 
 LOGGER = logging.getLogger(__name__)
 
+try:
+    shlex.join([])
+except AttributeError:
+    shlex.join = lambda args: " ".join(shlex.quote(arg) for arg in args)
+
 
 def _parse_args(args=None):
     parser = argparse.ArgumentParser(

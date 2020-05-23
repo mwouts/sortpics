@@ -1,8 +1,7 @@
 import os
-import shlex
 from unittest.mock import patch
 from datetime import datetime
-from sortpics.cli import sortpics_cli
+from sortpics.cli import sortpics_cli, shlex
 
 
 def test_sortpics_cli(
