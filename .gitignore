@@ -9,3 +9,7 @@ __pycache__
 
 # Tests that involve local examples
 test_local*
+
+# Coverage files
+.coverage
+coverage.xml

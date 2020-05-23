@@ -8,6 +8,7 @@ dependencies:
   - tqdm
   - pytest
   - pytest-xdist
+  - pytest-cov
   - pre-commit
   - black
   - flake8
